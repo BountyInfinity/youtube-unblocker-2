@@ -82,7 +82,7 @@
   </script>
 </head>
 <body>
-  <div id="instructions" class="center">
+  <div id="title" class="center">
     <h1 class="center">YouTube</h5>
       <div class=center>
 	<h3>Insert YouTube Link:</h3>
@@ -109,8 +109,8 @@
   var link;
   let id;
   submit.onclick = () => {
-    if(document.getElementById('instructions')) {
-      document.getElementById('instructions').remove();
+    if(document.getElementById('title')) {
+      document.getElementById('title').remove();
     }
     link = url.value;
     id = link.replace(strip_timestamps, "");
