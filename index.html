@@ -97,19 +97,31 @@
   var video_holder_holder = document.getElementById('video-holder-holder');
   var link;
   let id;
-  submit.onclick = () => {
-    if(document.getElementById('title')) {
-      document.getElementById('title').remove();
-    }
+  
+  function urlToId() {
     link = url.value;
     id = link.replace(strip_timestamps, "");
     id = id.split("&");
     id = id[0].substr(id[0].length - 11, 11);
-
+  }
+  
+  function showIFrame() {
     video_holder = document.getElementById('video-holder').cloneNode(true);
     video_holder.style.display = 'block';
     video_holder.children[1].src = base + id+ end;
     video_holder_holder.appendChild(video_holder);
+  }
+  
+  function removeTitle() {
+    if(document.getElementById('title')) {
+      document.getElementById('title').remove();
+    }
+  }
+  
+  submit.onclick = () => { 
+    urlToId();
+    showIFrame();
+    removeTitle();
   }
 </script>
 </html>
