@@ -90,6 +90,12 @@
   var link;
   let id;
   
+  video.onclick = () => {
+    event.preventDefault();
+    var url = $(this).attr('href');
+    window.location = "/" + url;
+  }
+  
   function urlToId() {
     link = urlInput.value;
     id = link.replace(strip_timestamps, "");
