@@ -66,10 +66,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"; rel="stylesheet">
 </head>
 <body>
-  <div id="title" class="center" onload="#top">
+  <div id="title" class="center">
     <div class=center>
       <h3>Insert YouTube Link:</h3>
- 	    <input id="url" type="text" placeholder="" required>
+ 	    <input id="urlInput" type="text" placeholder="" required>
       <button id="submit" class="submit-button">Watch</button>
     </div>
   </div>
@@ -84,15 +84,14 @@
   const base = "https://www.youtube-nocookie.com/embed/";
   const end = "?wmode=transparent&amp;iv_load_policy=3&amp;autoplay=0&amp;html5=1&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=0&amp;theme=light";   const strip_timestamps = /\?t=\d+/;
   var submit = document.getElementById('submit');
-  var download = document.getElementById('download');
-  var url = document.getElementById('url');
+  var urlInput = document.getElementById('urlInput');
   var video_holder;
   var video_holder_holder = document.getElementById('video-holder-holder');
   var link;
   let id;
   
   function urlToId() {
-    link = url.value;
+    link = urlInput.value;
     id = link.replace(strip_timestamps, "");
     id = id.split("&");
     id = id[0].substr(id[0].length - 11, 11);
