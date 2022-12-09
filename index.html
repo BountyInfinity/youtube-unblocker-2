@@ -96,14 +96,12 @@
     window.location = "/" + url;
   }
   
-  function urlToId() {
+  function showIFrame() {
     link = urlInput.value;
     id = link.replace(strip_timestamps, "");
     id = id.split("&");
     id = id[0].substr(id[0].length - 11, 11);
-  }
-  
-  function showIFrame() {
+    
     video_holder = document.getElementById('video-holder').cloneNode(true);
     video_holder.style.display = 'block';
     video_holder.children[1].src = base + id+ end;
@@ -117,9 +115,8 @@
   }
   
   submit.onclick = () => { 
-    urlToId();
-    showIFrame();
     removeTitle();
+    showIFrame();
   }
 </script>
 </html>
