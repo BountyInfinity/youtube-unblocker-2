@@ -82,7 +82,8 @@
 </body>
 <script>
   const base = "https://www.youtube-nocookie.com/embed/";
-  const end = "?wmode=transparent&amp;iv_load_policy=3&amp;autoplay=0&amp;html5=1&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=0&amp;theme=light";   const strip_timestamps = /\?t=\d+/;
+  const end = "?wmode=transparent&amp;iv_load_policy=3&amp;autoplay=0&amp;html5=1&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=0&amp;theme=light";
+  const strip_timestamps = /\?t=\d+/;
   var submit = document.getElementById('submit');
   var urlInput = document.getElementById('urlInput');
   var video_holder;
@@ -90,17 +91,12 @@
   var link;
   let id;
   
-  video.onclick = () => {
-    event.preventDefault();
-    var url = $(this).attr('href');
-    window.location = "/" + url;
-  }
-  
   function showIFrame() {
     link = urlInput.value;
     id = link.replace(strip_timestamps, "");
     id = id.split("&");
-    id = id[0].substr(id[0].length - 11, 11);
+    id = id[0].split("watch?v=");
+    id = id[1]
     
     video_holder = document.getElementById('video-holder').cloneNode(true);
     video_holder.style.display = 'block';
