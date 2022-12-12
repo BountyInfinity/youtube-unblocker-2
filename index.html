@@ -89,6 +89,7 @@
   var video_holder;
   var video_holder_holder = document.getElementById('video-holder-holder');
   var link;
+  var iframesrc;
   let id;
   
   function showIFrame() {
@@ -96,11 +97,10 @@
     id = link.replace(strip_timestamps, "");
     id = id.split("&");
     id = id[0].split("watch?v=");
-    id = id[1]
     
     video_holder = document.getElementById('video-holder').cloneNode(true);
     video_holder.style.display = 'block';
-    video_holder.children[1].src = base + id+ end;
+    video_holder.children[1].src = base + id[1] + end;
     video_holder_holder.appendChild(video_holder);
   }
   
