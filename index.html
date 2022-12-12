@@ -103,7 +103,7 @@
     
     video_holder = document.getElementById('video-holder').cloneNode(true);
     video_holder.style.display = 'block';
-    video_holder.children[1].src = base + id[1] + end;
+    video_holder.children[1].src = base + id[id.length] + end;
     video_holder_holder.appendChild(video_holder);
   }
   
