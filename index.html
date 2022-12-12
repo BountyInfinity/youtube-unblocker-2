@@ -115,8 +115,10 @@
   }
   
   submit.onclick = () => { 
-    removeTitle();
-    showIFrame();
+    if (urlInput != null) {
+      removeTitle();
+      showIFrame();
+    }
   }
 </script>
 </html>
