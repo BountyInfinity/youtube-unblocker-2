@@ -87,7 +87,7 @@
     <div id="title" class="center">
         <div class=center>
             <h3>Insert YouTube Link:</h3>
-            <input id="urlInput" type="text" placeholder="" required>
+            <input id="input" type="text" placeholder="" required>
             <button id="submit" class="submit-button">Watch</button>
         </div>
     </div>
@@ -104,15 +104,14 @@
     const end = "?wmode=transparent&amp;iv_load_policy=3&amp;autoplay=0&amp;html5=1&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=0&amp;theme=light";
     const strip_timestamps = /\?t=\d+/;
     var submit = document.getElementById('submit');
-    var urlInput = document.getElementById('urlInput');
+    var input = document.getElementById('input');
     var video_holder;
     var video_holder_holder = document.getElementById('video-holder-holder');
-    var link;
     let id;
 
     function showIFrame() {
-        link = urlInput.value;
-        id = link.replace(strip_timestamps, "");
+        id = input.value;
+        id = id.replace(strip_timestamps, "");
         id = id.split("&");
         id = id[0].substr(id[0].length - 11, 11);
 
