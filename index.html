@@ -107,6 +107,7 @@
     var input = document.getElementById('input');
     var video_holder;
     var video_holder_holder = document.getElementById('video-holder-holder');
+    var link;
     let id;
 
     function showIFrame() {
@@ -114,11 +115,14 @@
         id = id.replace(strip_timestamps, "");
         id = id.split("&");
         id = id[0].substr(id[0].length - 11, 11);
+        link = base + id + end;
 
         video_holder = document.getElementById('video-holder').cloneNode(true);
         video_holder.style.display = 'block';
-        video_holder.children[1].src = base + id + end;
+        video_holder.children[1].src = link;
         video_holder_holder.appendChild(video_holder);
+
+        document.title = "Unknown Video";
     }
 
     function removeTitle() {
