@@ -78,8 +78,7 @@
     </style>
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
         ; rel="stylesheet">
 </head>
 
@@ -101,7 +100,6 @@
 </body>
 <script>
     const base = "https://www.youtube-nocookie.com/embed/";
-    const end = "?wmode=transparent&amp;iv_load_policy=3&amp;autoplay=0&amp;html5=1&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=0&amp;theme=light";
     const strip_timestamps = /\?t=\d+/;
     var submit = document.getElementById('submit');
     var input = document.getElementById('input');
@@ -115,7 +113,7 @@
         id = id.replace(strip_timestamps, "");
         id = id.split("&");
         id = id[0].substr(id[0].length - 11, 11);
-        link = base + id + end;
+        link = base + id;
 
         video_holder = document.getElementById('video-holder').cloneNode(true);
         video_holder.style.display = 'block';
