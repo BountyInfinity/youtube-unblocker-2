@@ -3,6 +3,7 @@
 
 <head>
     <title>YouTube</title>
+    <link rel="shortcut icon" type="image/png" href="https://user-images.githubusercontent.com/105021032/207970657-538d623b-1727-4647-b097-3cfe472ae154.png"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <style>
@@ -106,7 +107,21 @@
     var video_holder;
     var video_holder_holder = document.getElementById('video-holder-holder');
     var link;
-    let id;
+    let id;    
+
+    document.head = document.head || document.getElementsByTagName('head')[0];
+
+    function changeFavicon(src) {
+      var link = document.createElement('link'),
+      oldLink = document.getElementById('dynamic-favicon');
+       link.id = 'dynamic-favicon';
+       link.rel = 'shortcut icon';
+       link.href = src;
+       if (oldLink) {
+        document.head.removeChild(oldLink);
+       }
+        document.head.appendChild(link);
+     }
 
     function showIFrame() {
         id = input.value;
