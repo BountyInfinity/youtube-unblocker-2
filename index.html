@@ -131,8 +131,12 @@
     }
 
     submit.onclick = () => {
-        removeTitle();
-        showIFrame();
+        if (input != null) {
+            removeTitle();
+            showIFrame();
+        } else {
+            alert("Enter a URL to unblock to continue.");
+        };
     }
 </script>
 
